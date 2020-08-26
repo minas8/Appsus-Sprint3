@@ -1,5 +1,5 @@
 
-export function BooksPriceFilter() {
+export function BookPriceFilter() {
     return (
         <div>
 
