@@ -1,6 +1,6 @@
 import { keepService } from '../services/keep-service.js'
 import { KeepList } from '../cmps/KeepCmps/KeepList.jsx'
-// import { KeepEdit } from '../cmps/KeepCmps/KeepEdit.jsx'
+import { KeepAdd } from '../cmps/KeepCmps/KeepAdd.jsx'
 
 export class KeepApp extends React.Component {
 
@@ -20,8 +20,8 @@ export class KeepApp extends React.Component {
             });
     }
 
-    setNoteStyle = (id, style) => {
-        keepService.setNoteStyleById(id, style);
+    editNoteById = (id, key, value) => {
+        keepService.editNoteById(id, key, value);
         this.loadNotes();
     }
 
@@ -37,7 +37,6 @@ export class KeepApp extends React.Component {
             confirmButtonText: 'Yes, delete note'
         }).then((result) => {
             if (result.value) {
-                // this.toggleExpandEmail();
                 keepService.removeNoteById(id)
                 this.loadNotes()
                     .then(res => {
@@ -47,28 +46,22 @@ export class KeepApp extends React.Component {
         });
     };
 
-    getPinnedNotesForDisplay() {
-        const notes = this.state.notes.filter(notes => notes.isPinned);
-        return notes;
-    }
-
-    // TODO: use only one func => send notes.isPinned as parameter
-    getUnPinnedNotesForDisplay() {
-        const notes = this.state.notes.filter(notes => !notes.isPinned);
+    getNotesForDisplay(isPinned) {
+        const notes = this.state.notes.filter(notes => notes.isPinned === isPinned);
         return notes;
     }
 
     render() {
-        const notesPinned = this.getPinnedNotesForDisplay();
-        const notes = this.getUnPinnedNotesForDisplay();
+        const notesPinned = this.getNotesForDisplay(true);
+        const notesUnPinned = this.getNotesForDisplay(false);
         return (
             <section className='keep-app-container'>
                 <h1>KeepApp</h1>
-                {/* <KeepEdit /> */}
+                <KeepAdd />
                 <h3>Pinned Notes</h3>
-                <KeepList notes={notesPinned} setNoteStyle={this.setNoteStyle} removeNote={this.removeNote} />
+                <KeepList listClass='pinned-note-list' notes={notesPinned} editNoteById={this.editNoteById} removeNote={this.removeNote} />
                 <h3>Other Notes</h3>
-                <KeepList notes={notes} setNoteStyle={this.setNoteStyle} removeNote={this.removeNote} />
+                <KeepList notes={notesUnPinned} editNoteById={this.editNoteById} removeNote={this.removeNote} />
             </section>
         )
     }

@@ -7,22 +7,23 @@ var notes = [
         type: "NoteText",
         isPinned: true,
         info: {
-            txt: "מלי ומיכאל מתחתנים בע\"ה בכ\"ד אלול (13.9) בשעה 10:00. מזל טוב :)"
+            txt: `מלי ומיכאל מתחתנים בע\"ה בכ\"ד אלול (13.9) בשעה 10:00.\n
+            מזל טוב :)`
         },
         style: {
-            backgroundColor: utilService.getRandomColor()
+            backgroundColor: 'rgb(255, 118, 5)'
         }
     },
     {
         id: utilService.makeId(8),
         type: "NoteImg",
-        isPinned: false,
+        isPinned: true,
         info: {
             url: "../../assets/imgs/keep/regex.png",
             title: "Helpful explanation of regex"
         },
         style: {
-            backgroundColor: utilService.getRandomColor()
+            backgroundColor: 'rgb(229, 78, 237)'
         }
     },
     {
@@ -33,7 +34,7 @@ var notes = [
             txt: "המקרר נוזל, להזמין טכנאי. לא לשכוח!!!"
         },
         style: {
-            backgroundColor: utilService.getRandomColor()
+            backgroundColor: 'rgb(41, 135, 236)'
         }
     },
     {
@@ -45,22 +46,23 @@ var notes = [
             title: "Can you read what is written here ?!"
         },
         style: {
-            backgroundColor: utilService.getRandomColor()
+            backgroundColor: 'rgb(37, 251, 204)'
         }
     },
     {
         id: utilService.makeId(8),
         type: "NoteTodos",
-        isPinned: false,
+        isPinned: true,
         info: {
-            label: "רשימת קניות:",
+            label: "TODOs for today:",
             todos: [
-                { txt: "2 חלב", doneAt: null },
-                { txt: "1 קוטג\'", doneAt: 187111111 }
+                { txt: "Take out the trash", doneAt: null },
+                { txt: "Wash the dishes", doneAt: 187111111 },
+                { txt: "Change the sheets", doneAt: null }
             ]
         },
         style: {
-            backgroundColor: utilService.getRandomColor()
+            backgroundColor: 'rgb(141, 224, 8)'
         }
     }
 ];
@@ -72,6 +74,14 @@ function query() {
 
 function getNoteById(id) {
     return Promise.resolve(notes.find(note => note.id === id));
+}
+
+function editNoteById(id, key, value) {
+    notes.find(note => {
+        if (note.id === id) {
+            note[key] = value;
+        }
+    });
 }
 
 function setNoteStyleById(id, style) {
@@ -116,6 +126,7 @@ function addNote(nodeType, note) {
 export const keepService = {
     query,
     getNoteById,
-    setNoteStyleById,
+    editNoteById,
+    // setNoteStyleById,
     removeNoteById
 }

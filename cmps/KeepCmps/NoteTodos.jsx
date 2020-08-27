@@ -2,7 +2,7 @@
 export function NoteTodos({ note, doneTodo }) {
     const info = note.info;
 
-    doneTodo = () => {
+    doneTodo = (noteId, todoTxt) => {
 
     }
 
@@ -17,7 +17,17 @@ export function NoteTodos({ note, doneTodo }) {
             <h3>{info.label}</h3>
             <ul>
                 {info.todos.map(todo => {
-                    <li onClick={() => doneTodo(todo.txt)} style={todoStyle}>{todo.txt}</li>
+                    console.log(todo);
+                    {
+                        info.doneAt && <li onClick={() => doneTodo(note.id, todo.txt)} style={todoStyle}>
+                            {todo.txt}
+                        </li>
+                    }
+                    {
+                        !info.doneAt || <li onClick={() => doneTodo(note.id, todo.txt)}>
+                            {todo.txt}
+                        </li>
+                    }
                 })}
             </ul>
         </article>
