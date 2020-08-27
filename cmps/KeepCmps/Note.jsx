@@ -1,4 +1,3 @@
-// import { DynamicCmp } from './DynamicCmp.jsx'
 import { NoteText } from './NoteText.jsx'
 import { NoteImg } from './NoteImg.jsx'
 // import { NoteTodos } from './NoteTodos.jsx'
@@ -17,7 +16,6 @@ export class Note extends React.Component {
     }
 
     componentDidMount() {
-        console.log('componentDidMount -\n this.props.note.type:', this.props.note.type);
         this.toggleView(this.props.note.type);
     }
 
@@ -31,15 +29,23 @@ export class Note extends React.Component {
 
         const { currView } = this.state
         const DynamicCmp = cmpMap[currView]
-        // console.log('currView:', currView);
 
         return (
-            <Link to={`/note/${note.id}`}>
+            <Link to={`/keep/${note.id}`}>
                 <div className="note note-preview-container" style={noteStyle}>
                     <article className="note-preview">
-                        {/* <NoteText note={note} removeNote={removeNote} /> */}
-                        {DynamicCmp && <DynamicCmp currView={currView} note={note} removeNote={removeNote} />}
+                        {DynamicCmp && <DynamicCmp currView={currView} note={note}
+                            removeNote={removeNote} />}
                     </article>
+                    <div className='btns-container'>
+                        <Link to={`/keep/`}>
+                            <svg className="delete-icon" viewBox="0 0 448 512">
+                                <path onClick={(event) => {
+                                    removeNote(event, note.id)
+                                }} fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 00281.1 0H166.8a23.72 23.72 0 00-21.4 13.3L136 32H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16zM53.2 467a48 48 0 0047.9 45h245.8a48 48 0 0047.9-45L416 128H32z" />
+                            </svg>
+                        </Link>
+                    </div>
                 </div>
             </Link>
         )

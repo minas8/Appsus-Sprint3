@@ -20,10 +20,32 @@ export class KeepApp extends React.Component {
             });
     }
 
-    removeNote = (id) => {
-        keepService.removeNoteById(id);
-        this.loadNotes();
-    }
+    // removeNote = (id) => {
+    //     keepService.removeNoteById(id);
+    //     this.loadNotes();
+    // }
+
+    removeNote = (ev, id) => {
+        ev.stopPropagation();
+
+        Swal.fire({
+            title: 'Are you sure?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#56e674',
+            cancelButtonColor: '#e65656',
+            confirmButtonText: 'Yes, delete note'
+        }).then((result) => {
+            if (result.value) {
+                // this.toggleExpandEmail();
+                keepService.removeNoteById(id)
+                this.loadNotes()
+                    .then(res => {
+                        eventBusService.emit('user-msg', { header: 'Note Deleted', body: 'This note was deleted' });
+                    });
+            };
+        });
+    };
 
     getPinnedNotesForDisplay() {
         const notes = this.state.notes.filter(notes => notes.isPinned);
