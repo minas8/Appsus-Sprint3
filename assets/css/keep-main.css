@@ -33,27 +33,10 @@
     grid-gap: 10px; */
 
 }
-<<<<<<< HEAD
 .pinned-note-list {
     background-color: #eeeeee;
     border-radius: 5px;
 }
-=======
-
-.fill {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    border: none;
-    margin: 10px;
-    background-image: url('../imgs/bg-color.png');
-    background-size: 50px 50px;
-    background-repeat: no-repeat;
-    background-position: 50% 70%;
-    background-color: white;
-}
-
->>>>>>> f7c341f2920dee1fd18159ff225660654fcfa4ea
 .note {
     max-width: 250px;
     display: inline-block;
