@@ -194,7 +194,6 @@ function _getEmailIndex(emailId) {
 };
 
 function sendEmail(to, subject, body) {
-    // simulating real world issues
     if (Math.random() > 0.95) return Promise.reject('Failed to send');
     let newemail = {
         id: utilService.makeId(4),

@@ -40,11 +40,6 @@ export class NavBar extends React.Component {
                         <img className="logo" src={`assets/imgs/logo-${currApp}.png`} />
                     </NavLink>
                     {(currApp === 'home') && <HomePageTitle />}
-                    <section className="nav-break-wide">
-                        {(currApp != 'home') && <SearchBar currApp={this.state.currApp} />}
-                        {(currApp === 'email') && <EmailStatusFilter />}
-                        {(currApp === 'books') && <BooksPriceFilter />}
-                    </section>
                     <div ref={this.navToggleBtn} onClick={this.toggleNavLinks} className="nav-links-toggle-wrapper">
                         <img className="navlinks-toggle" src="assets/imgs/nav-icn-grey.png" alt="" />
                     </div>
@@ -52,8 +47,6 @@ export class NavBar extends React.Component {
                 </nav>
                 <section className="nav-break-narrow">
                     {(currApp != 'home') && <SearchBar currApp={this.state.currApp} />}
-                    {(currApp === 'email') && <EmailStatusFilter />}
-                    {(currApp === 'books') && <BooksPriceFilter />}
                 </section>
             </React.Fragment>
         )
