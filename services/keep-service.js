@@ -7,10 +7,10 @@ var notes = [
         type: "NoteText",
         isPinned: true,
         info: {
-            txt: "Fullstack Me Baby!"
+            txt: "מלי ומיכאל מתחתנים בע\"ה בכ\"ד אלול (13.9) בשעה 10:00. מזל טוב :)"
         },
         style: {
-            backgroundColor: "#f6f5f5"
+            backgroundColor: utilService.getRandomColor()
         }
     },
     {
@@ -18,25 +18,22 @@ var notes = [
         type: "NoteText",
         isPinned: false,
         info: {
-            txt: "React is on!"
+            txt: "המקרר נוזל, להזמין טכנאי. לא לשכוח!!!"
         },
         style: {
-            backgroundColor: "#f6f5f5"
+            backgroundColor: utilService.getRandomColor()
         }
-    }
-];
-
-/*
-{
+    },
+    {
         id: utilService.makeId(8),
         type: "NoteImg",
         isPinned: false,
         info: {
-            url: "http://some-img/me",
-            title: "Me playing Mi"
+            url: "../../assets/imgs/keep/quiz.png",
+            title: "Can you read what is written here ?!"
         },
         style: {
-            backgroundColor: "#f6f5f5"
+            backgroundColor: utilService.getRandomColor()
         }
     },
     {
@@ -44,17 +41,19 @@ var notes = [
         type: "NoteTodos",
         isPinned: false,
         info: {
-            label: "How was it:",
+            label: "רשימת קניות:",
             todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+                { txt: "2 חלב", doneAt: null },
+                { txt: "1 קוטג\'", doneAt: 187111111 }
             ]
         },
         style: {
-            backgroundColor: "#f6f5f5"
+            backgroundColor: utilService.getRandomColor()
         }
     }
-*/
+];
+
+
 function query() {
     return Promise.resolve(notes);
 }

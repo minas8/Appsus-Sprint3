@@ -12,7 +12,7 @@ export class App extends React.Component {
     render() {
         return (
             <Router >
-                <main >
+                <main>
                     <NavBar />
                     <UserMsg />
                     <Switch>
