@@ -122,7 +122,7 @@ var gInitialEmails = [
         from: 'facebook.con',
         to: G_USER,
         subject: 'Receipt for Your Payment to Spotify Finance Limited',
-        body: 'You sent a payment of ₪19.90 ILS to Spotify Finance Limited. It may take a few moments for this transaction to appear in your account.',
+        body: 'Aloha to you Mina, of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as theirof using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as theirof using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their',
         isRead: false,
         date: 1583874112210
     }

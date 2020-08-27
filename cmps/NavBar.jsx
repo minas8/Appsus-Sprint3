@@ -2,7 +2,6 @@ import { NavLinks } from './NavLinks.jsx'
 import { HomePageTitle } from './HomePageTitle.jsx'
 import { SearchBar } from './SearchBar.jsx'
 import { eventBusService } from '../services/event-bus-service.js';
-import { EmailStatusFilter } from './EmailCmps/EmailStatusFilter.jsx'
 const { NavLink } = ReactRouterDOM;
 
 export class NavBar extends React.Component {
