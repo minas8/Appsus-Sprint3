@@ -15,6 +15,18 @@ var notes = [
     },
     {
         id: utilService.makeId(8),
+        type: "NoteImg",
+        isPinned: false,
+        info: {
+            url: "../../assets/imgs/keep/regex.png",
+            title: "Helpful explanation of regex"
+        },
+        style: {
+            backgroundColor: utilService.getRandomColor()
+        }
+    },
+    {
+        id: utilService.makeId(8),
         type: "NoteText",
         isPinned: false,
         info: {
@@ -62,6 +74,14 @@ function getNoteById(id) {
     return Promise.resolve(notes.find(note => note.id === id));
 }
 
+function setNoteStyleById(id, style) {
+    notes.find(note => {
+        if (note.id === id) {
+            note.style = style;
+        }
+    });
+}
+
 function removeNoteById(id) {
     notes.splice(notes.findIndex(note => note.id === id), 1);
 }
@@ -96,5 +116,6 @@ function addNote(nodeType, note) {
 export const keepService = {
     query,
     getNoteById,
+    setNoteStyleById,
     removeNoteById
 }

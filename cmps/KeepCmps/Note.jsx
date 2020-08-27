@@ -24,7 +24,7 @@ export class Note extends React.Component {
     }
 
     render() {
-        const { note, removeNote } = this.props
+        const { note, removeNote, setNoteStyle } = this.props
         const noteStyle = note.style;
 
         const { currView } = this.state
@@ -38,16 +38,43 @@ export class Note extends React.Component {
                             removeNote={removeNote} />}
                     </article>
                     <div className='btns-container'>
-                        <Link to={`/keep/`}>
-                            <svg className="delete-icon" viewBox="0 0 448 512">
-                                <path onClick={(event) => {
-                                    removeNote(event, note.id)
-                                }} fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 00281.1 0H166.8a23.72 23.72 0 00-21.4 13.3L136 32H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16zM53.2 467a48 48 0 0047.9 45h245.8a48 48 0 0047.9-45L416 128H32z" />
-                            </svg>
-                        </Link>
+
+                        <img src='../../assets/imgs/bg-color.png' alt="" className="color-icon" onClick={() => setNoteStyle(note.id, {
+                            style: {
+                                backgroundColor: utilService.getRandomColor()
+                            }
+                        })} />
+                        <img src='../../assets/imgs/trash.png' alt="" className="delete-icon" onClick={(event) => {
+                            removeNote(event, note.id)
+                        }} />
+
+
+
+
+                        {/* <div className="color-icon" onClick={() => setNoteStyle(note.id, {
+                            style: {
+                                backgroundColor: utilService.getRandomColor()
+                            }
+                        })}>
+                            <img src='../../assets/imgs/bg-color.png' alt="" />
+                        </div> */}
+                        {/* <Link to={`/keep/`}> */}
+                        {/* <div className="delete-icon" onClick={(event) => {
+                            removeNote(event, note.id)
+                        }}>
+                            <img src='../../assets/imgs/trash.png' alt="" />
+                        </div> */}
+                        {/* </Link> */}
                     </div>
                 </div>
             </Link>
         )
     }
 }
+
+
+{/* <svg className="delete-icon" viewBox="0 0 448 512">
+                                <path onClick={(event) => {
+                                    removeNote(event, note.id)
+                                }} fill="currentColor" d="M432 32H312l-9.4-18.7A24 24 0 00281.1 0H166.8a23.72 23.72 0 00-21.4 13.3L136 32H16A16 16 0 000 48v32a16 16 0 0016 16h416a16 16 0 0016-16V48a16 16 0 00-16-16zM53.2 467a48 48 0 0047.9 45h245.8a48 48 0 0047.9-45L416 128H32z" />
+                            </svg> */}

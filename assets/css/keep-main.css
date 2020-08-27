@@ -46,9 +46,12 @@
 .note-preview-container:hover .btns-container {
     visibility: visible;
 }
-.note-preview-container .btns-container svg {
+.btns-container svg {
     height: 25px;
     margin: 10px 10px 0;
+}
+.btns-container img {
+    width: 15%;
 }
 
 .delete-icon {
