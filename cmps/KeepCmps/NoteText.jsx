@@ -1,8 +1,23 @@
 
-export function NoteText({ note, removeNote }) {
+export function NoteText({ note, isEdit }) {
     return (
-        <article className="note-preview">
-            <p>{note.info.txt}</p>
-        </article>
+        <div>
+            {
+                !isEdit && <article className="note-preview">
+                    <p>{note.info.txt}</p>
+                </article>
+            }
+            {
+                isEdit && <article className="note-txt-edit">
+                    <input type="text" name="" value={note.info.txt} onChange={() => { setChange(this.value) }} />
+                </article>
+            }
+        </div>
+
     )
 }
+
+
+
+
+

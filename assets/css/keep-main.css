@@ -48,7 +48,7 @@
 .note img {
     width: 100%;
 }
-.note-preview-container {
+.note-dynamic-container {
     min-height: min-content;
 }
 .btns-container {
@@ -61,36 +61,34 @@
     margin: 4px 0;
     position: relative;
 }
-.note-preview-container .btns-container {
+.note-dynamic-container .btns-container {
     visibility:hidden;
     opacity:0;
     transition:visibility 0.3s linear,opacity 0.3s linear;
 }
-.note-preview-container:hover .btns-container {
+.note-dynamic-container:hover .btns-container {
     visibility:visible;
     opacity:1;
 }
-/* .btns-container svg {
-    height: 25px;
-    margin: 10px 10px 0;
-} */
+
 .btns-container img {
     position: relative;
     width: 15%;
     margin: 10px 5px 0;
     cursor: pointer;
 }
-input[type="color"] {
-    /* position: absolute;
+/* input[type="color"] {
+    position: absolute;
     right: 45px;
     top: 10px;
-    height: 35px; */
-    /* display: none; */
-}
-.delete-icon {
+    height: 35px;
+    display: none;
+} */
+/* .delete-icon {
     color: rgb(46, 46, 46);
-}
-.delete-icon:hover {
-    
-    /* color: #e65656; */
-}
+    background-image: url('../imgs/trash.png');
+} */
+/* .delete-icon:hover {
+    background-image: url('../imgs/trash-hover.png');
+    color: #e65656;
+} */

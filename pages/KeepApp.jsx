@@ -25,6 +25,11 @@ export class KeepApp extends React.Component {
         this.loadNotes();
     }
 
+    updateNote = (note) => {
+        keepService.updateNote(note);
+        this.loadNotes();
+    }
+
     removeNote = (ev, id) => {
         ev.stopPropagation();
 
@@ -59,9 +64,11 @@ export class KeepApp extends React.Component {
                 <h1>KeepApp</h1>
                 <KeepAdd />
                 <h3>Pinned Notes</h3>
-                <KeepList listClass='pinned-note-list' notes={notesPinned} editNoteById={this.editNoteById} removeNote={this.removeNote} />
+                <KeepList listClass='pinned-note-list' notes={notesPinned} editNoteById={this.editNoteById}
+                    updateNote={this.updateNote} removeNote={this.removeNote} />
                 <h3>Other Notes</h3>
-                <KeepList notes={notesUnPinned} editNoteById={this.editNoteById} removeNote={this.removeNote} />
+                <KeepList notes={notesUnPinned} editNoteById={this.editNoteById} updateNote={this.updateNote}
+                    removeNote={this.removeNote} />
             </section>
         )
     }

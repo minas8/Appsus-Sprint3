@@ -12,9 +12,9 @@ export class KeepAdd extends React.Component {
                 {/* onClick={} */}
                 <input type="text" name="input-note" id="" placeholder={`What\'s on your mind?`} />
                 <div>
-                    <img src="../../assets/imgs/note_text.png" alt="Add note with text" />
-                    <img src="../../assets/imgs/note_img.png" alt="Add note with image" />
-                    <img src="../../assets/imgs/note_list.png" alt="Add note with todo list" />
+                    <img src="assets/imgs/note_text.png" alt="Add note with text" />
+                    <img src="assets/imgs/note_img.png" alt="Add note with image" />
+                    <img src="assets/imgs/note_list.png" alt="Add note with todo list" />
                 </div>
             </div>
         )
