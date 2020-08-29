@@ -402,10 +402,10 @@ footer {
         font-size: 4.3vw;
         margin: 0 auto;
     }
-    .nav-bar-container .logo {
+    /* .nav-bar-container .logo { */
         /* margin:0 auto; */
         /* width: 150px; */
-    }
+    /* } */
     .home-container img {
         display: flex;
         flex-direction: column;

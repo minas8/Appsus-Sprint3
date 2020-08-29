@@ -99,10 +99,10 @@
 .email .emails-list-container .read-unread-icon:hover {
     color: #56e674;
 }
-.delete-icon {
+.email .emails-list-container .delete-icon {
     color: rgb(46, 46, 46);
 }
-.delete-icon:hover {
+.email .emails-list-container .delete-icon:hover {
     color: #e65656;
 }
 
