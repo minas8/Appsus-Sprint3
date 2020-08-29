@@ -1,7 +1,7 @@
 
 .keep-app-container {
     border-collapse: collapse;
-    text-align: left;
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     margin: 35px 20px;
 }
@@ -94,3 +94,9 @@ input[type="color"] {
     
     /* color: #e65656; */
 }
+/* @media (max-width: 950px) {
+    .keep .notes-list {
+        column-count: 3;
+    }
+}
+*/
