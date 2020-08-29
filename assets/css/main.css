@@ -386,6 +386,15 @@ footer {
         grid-template-columns: 1fr 1fr;
         max-width: 630px;
     }
+    .keep-add-container>div {
+        display: flex;
+        position: relative;
+        align-content: center;
+        max-width: 530px;
+    }
+    .keep-add-container>input {
+        min-width: fit-content;
+    }
 }
 
 @media (max-width: 740px) {
@@ -432,14 +441,11 @@ footer {
         border: none;
         border-radius: 7px;
     }
-    .keep-add-container {
-        padding: 5px 15px;
+    .keep-add-container>div {
         display: flex;
+        position: relative;
         justify-content: space-between;
-        align-items: center;
-        min-height: 50px;
-        max-width: 50%;
-        }
+    }
 }
 
 @media (max-width: 565px) {
@@ -469,5 +475,15 @@ footer {
         display: grid;
         grid-template-columns: 1fr;
         max-width: 330px;
+    }
+    .keep-add-container>div> {
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        width: fit-content;
+
+    }
+    .keep-add-container>input {
+        min-width: fit-content;
     }
 }

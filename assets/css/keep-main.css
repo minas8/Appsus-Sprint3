@@ -34,8 +34,11 @@
 
 }
 .pinned-note-list {
+    display: flex;
+    justify-content: center;
     background-color: #eeeeee;
     border-radius: 5px;
+
 }
 .note {
     max-width: 250px;
